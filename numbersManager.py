@@ -108,22 +108,3 @@ class number:
                     print("Lütfen 3 rakam girin.")
             except ValueError:
                 print("Geçerli rakamlar girin.")
-
-    def play(self):
-        self.numberGen()
-        print("Seçilen sayılar:", self.trueNumbers)
-
-        self.notCorrect()
-        self.twoCorrectFalsePlace()
-        self.oneCorrectFalsePlace(1)
-        self.oneCorrectTruePlace()
-        self.oneCorrectFalsePlace(0)
-
-        for _ in range(3):
-            guess = self.getUserGuess()
-            result = self.evaluateGuess(guess)
-            print(result)
-            if "Doğru tahmin" in result:
-                break
-        else:
-            print("Üzgünüm, doğru tahmin yapamadınız. Doğru cevap:", self.trueNumbers)
